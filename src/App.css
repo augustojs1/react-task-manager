@@ -1,5 +1,11 @@
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -9,4 +15,10 @@ a {
 
 img {
     width: 100%;
+}
+
+.container {
+    justify-content: center;
+    width: 60rem;
+    margin: 0 auto;
 }
