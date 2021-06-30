@@ -27,13 +27,12 @@ const AddTask = () => {
 
     return (
         <>
-            <div>
+            <section className={styles.formContainer}>
                 <form onSubmit={handleSubmit} className={styles.FormContainer}>
-                    <label htmlFor="">Task:</label>
                     <input type="text" id="task" value={form} onChange={handleChange} />
                     <button>Add new task</button>
                 </form>
-            </div>
+            </section>
             {taskList.map((task, index) => (
                 <Tasks key={index} title={task.title} />
             ))}

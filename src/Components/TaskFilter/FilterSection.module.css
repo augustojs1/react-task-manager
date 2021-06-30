@@ -1,0 +1,14 @@
+.filterContainer {
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.filterContainer h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.filterButtonContainer {
+    display: flex;
+    justify-content: space-between;
+}
