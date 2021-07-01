@@ -1,11 +1,13 @@
 import React from 'react';
 import Tasks from './Tasks';
 
-const TaskList = ({ task }) => {
+const TaskList = ({ tasks }) => {
     return (
         <section>
             <ul>
-                <Tasks title={task} />
+                {tasks && tasks.map((task) => (
+                    <Tasks key={task.title} title={task.title} />
+                ))}
             </ul>
         </section>
     )

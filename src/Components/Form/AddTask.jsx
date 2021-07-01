@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from "./AddTask.module.css";
+import FilterSection from '../TaskFilter/FilterSection';
+import TaskList from '../TaskList/TaskList';
 
 const AddTask = () => {
     const [form, setForm] = React.useState('');
@@ -22,15 +24,17 @@ const AddTask = () => {
         setTaskList([...taskList, task]);
     }
 
-    console.log(taskList);
-
     return (
-        <section className={styles.formContainer}>
-            <form onSubmit={handleSubmit} className={styles.FormContainer}>
-                <input type="text" id="task" value={form} onChange={handleChange} />
-                <button>Add new task</button>
-            </form>
-        </section>
+        <>
+            <section className={styles.formContainer}>
+                <form onSubmit={handleSubmit} className={styles.FormContainer}>
+                    <input type="text" id="task" value={form} onChange={handleChange} />
+                    <button>Add new task</button>
+                </form>
+            </section>
+            <FilterSection/>
+            <TaskList tasks={taskList} />
+        </>
     )
 }
 
