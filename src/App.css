@@ -23,6 +23,10 @@ button {
     display: inline-block;
 }
 
+li {
+    list-style: none;
+}
+
 .container {
     width: 60rem;
     margin: 0 auto;

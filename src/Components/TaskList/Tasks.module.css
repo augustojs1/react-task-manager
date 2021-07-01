@@ -1,0 +1,6 @@
+.taskItem {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid gray;
+    padding: 1rem 1rem;
+}

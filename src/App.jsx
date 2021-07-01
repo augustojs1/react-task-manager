@@ -3,6 +3,7 @@ import "./App.css"
 import Header from "./Components/Header";
 import AddTask from "./Components/Form/AddTask";
 import FilterSection from "./Components/TaskFilter/FilterSection";
+import TaskList from "./Components/TaskList/TaskList";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <AddTask />
       <FilterSection />
+      <TaskList task="Learn ReactJS" />
     </div>
   );
 }
