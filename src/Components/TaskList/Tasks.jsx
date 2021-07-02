@@ -1,13 +1,34 @@
 import React from 'react';
 import styles from './Tasks.module.css';
 
-const Tasks = ({ title }) => {
+const Tasks = ({ task, taskList, setTaskList }) => {
+    let newTaskList;
+    const [done, setDone] = React.useState(false);
+
+    const handleCheck = ({ target }) => {
+        setDone(target.checked);
+
+    }
+
+    const handleEdit = (e) => {
+        console.log(`editing ${task.title}`);
+        
+    }
+
+    const handleDelete = (e) => {
+        const { title } = task;
+
+        newTaskList = taskList.filter((task) => task.title !== title);
+        
+        setTaskList([...newTaskList]);
+    }
+
     return <li className={styles.taskItem}>
-        <p>{title}</p>
+        {done === true ? <p className={styles.completedTask}>{task.title}</p> : <p>{task.title}</p>}
         <span>
-            <button>Check</button>
-            <button>Edit</button>
-            <button>Delete</button>
+            <input type="checkbox" value="completed" checked={done} onChange={handleCheck} />
+            <button onClick={handleEdit}>Edit</button>
+            <button onClick={handleDelete}>Delete</button>
         </span>
     </li>;   
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import Tasks from './Tasks';
 
-const TaskList = ({ tasks }) => {
+const TaskList = ({ taskList, setTaskList }) => {
     return (
         <section>
             <ul>
-                {tasks && tasks.map((task) => (
-                    <Tasks key={task.title} title={task.title} />
+                {taskList && taskList.map((task, index) => (
+                    <Tasks key={index} task={task} taskList={taskList} setTaskList={setTaskList} />
                 ))}
             </ul>
         </section>

@@ -33,7 +33,7 @@ const AddTask = () => {
                 </form>
             </section>
             <FilterSection/>
-            <TaskList tasks={taskList} />
+            <TaskList taskList={taskList} setTaskList={setTaskList} />
         </>
     )
 }

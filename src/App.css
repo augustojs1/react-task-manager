@@ -28,6 +28,8 @@ li {
 }
 
 .container {
-    width: 60rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 60rem;
     margin: 0 auto;
 }
