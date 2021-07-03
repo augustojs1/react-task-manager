@@ -5,9 +5,15 @@ const Tasks = ({ task, taskList, setTaskList }) => {
     let newTaskList;
     const [done, setDone] = React.useState(false);
 
+
     const handleCheck = ({ target }) => {
+        const { title } = task;
+
         setDone(target.checked);
 
+        const taskIndex = taskList.findIndex((task) => task.title === title);
+
+        taskList[taskIndex].done = target.checked;
     }
 
     const handleEdit = (e) => {
@@ -26,7 +32,7 @@ const Tasks = ({ task, taskList, setTaskList }) => {
     return <li className={styles.taskItem}>
         {done === true ? <p className={styles.completedTask}>{task.title}</p> : <p>{task.title}</p>}
         <span>
-            <input type="checkbox" value="completed" checked={done} onChange={handleCheck} />
+            <input type="checkbox" value={done} checked={done} onChange={handleCheck} />
             <button onClick={handleEdit}>Edit</button>
             <button onClick={handleDelete}>Delete</button>
         </span>

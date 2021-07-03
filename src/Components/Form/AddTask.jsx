@@ -6,6 +6,7 @@ import TaskList from '../TaskList/TaskList';
 const AddTask = () => {
     const [form, setForm] = React.useState('');
     const [taskList, setTaskList] = React.useState([]);
+    const [taskRender, setTaskRender] = React.useState([]);
     let task = {};    
 
     const handleChange = ({ target }) => {
@@ -32,7 +33,7 @@ const AddTask = () => {
                     <button>Add new task</button>
                 </form>
             </section>
-            <FilterSection/>
+            <FilterSection taskList={taskList} setTaskList={setTaskList} />
             <TaskList taskList={taskList} setTaskList={setTaskList} />
         </>
     )
