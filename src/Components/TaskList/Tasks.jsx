@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Tasks.module.css';
 
-const Tasks = ({ task, taskList, setTaskList }) => {
+const Tasks = ({ task, render, setTaskList, setRender }) => {
     let newTaskList;
     const [done, setDone] = React.useState(false);
 
@@ -11,30 +11,25 @@ const Tasks = ({ task, taskList, setTaskList }) => {
 
         setDone(target.checked);
 
-        const taskIndex = taskList.findIndex((task) => task.title === title);
+        const taskIndex = render.findIndex((task) => task.title === title);
 
-        taskList[taskIndex].done = target.checked;
-    }
-
-    const handleEdit = (e) => {
-        console.log(`editing ${task.title}`);
-        
+        render[taskIndex].done = target.checked;
     }
 
     const handleDelete = (e) => {
         const { title } = task;
 
-        newTaskList = taskList.filter((task) => task.title !== title);
+        newTaskList = render.filter((task) => task.title !== title);
         
         setTaskList([...newTaskList]);
+        setRender([...newTaskList]);
     }
 
     return <li className={styles.taskItem}>
-        {done === true ? <p className={styles.completedTask}>{task.title}</p> : <p>{task.title}</p>}
+        {task.done === true ? <p className={styles.completedTask}>{task.title}</p> : <p>{task.title}</p>}
         <span>
-            <input type="checkbox" value={done} checked={done} onChange={handleCheck} />
-            <button onClick={handleEdit}>Edit</button>
-            <button onClick={handleDelete}>Delete</button>
+            <input type="checkbox" checked={task.done} onChange={handleCheck} />
+            <button className={styles.deleteButton} onClick={handleDelete}></button>
         </span>
     </li>;   
 }

@@ -2,12 +2,13 @@ import React from 'react';
 import styles from "./AddTask.module.css";
 import FilterSection from '../TaskFilter/FilterSection';
 import TaskList from '../TaskList/TaskList';
+import useRender from '../../Hooks/useRender';
 
 const AddTask = () => {
     const [form, setForm] = React.useState('');
     const [taskList, setTaskList] = React.useState([]);
-    const [taskRender, setTaskRender] = React.useState([]);
-    let task = {};    
+    const [render, setRender] = useRender();
+    let task = {};
 
     const handleChange = ({ target }) => {
         setForm(target.value);
@@ -23,6 +24,7 @@ const AddTask = () => {
 
         setForm('');
         setTaskList([...taskList, task]);
+        setRender([...taskList, task]);
     }
 
     return (
@@ -33,8 +35,8 @@ const AddTask = () => {
                     <button>Add new task</button>
                 </form>
             </section>
-            <FilterSection taskList={taskList} setTaskList={setTaskList} />
-            <TaskList taskList={taskList} setTaskList={setTaskList} />
+            <FilterSection taskList={taskList} setTaskList={setTaskList} render={render} setRender={setRender} />
+            <TaskList render={render} setTaskList={setTaskList} setRender={setRender} />
         </>
     )
 }

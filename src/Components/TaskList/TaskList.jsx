@@ -1,15 +1,20 @@
 import React from 'react';
 import Tasks from './Tasks';
+import TaskActions from '../TaskActions/TaskActions';
 
-const TaskList = ({ taskList, setTaskList }) => {
+const TaskList = ({ render, setTaskList, setRender }) => {
+
     return (
-        <section>
-            <ul>
-                {taskList && taskList.map((task, index) => (
-                    <Tasks key={index} task={task} taskList={taskList} setTaskList={setTaskList} />
-                ))}
-            </ul>
-        </section>
+        <>
+            <section>
+                <ul>
+                    {render && render.map((task, index) => (
+                        <Tasks key={index} task={task} render={render} setTaskList={setTaskList} setRender={setRender} />
+                    ))}
+                </ul>
+            </section>
+            <TaskActions />
+        </>
     )
 }
 

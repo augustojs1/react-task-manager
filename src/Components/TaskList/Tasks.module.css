@@ -1,7 +1,6 @@
 .taskItem {
     display: flex;
     justify-content: space-between;
-    /* border: 1px solid gray; */
     padding: 1rem 1rem;
     margin: 0.5rem 0;
     color: black;
@@ -9,6 +8,23 @@
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
+.taskItem span {
+    display: flex;
+    align-items: center;
+}
+
+
 .completedTask {
     text-decoration: line-through red solid;
+}
+
+.deleteButton {
+    text-decoration: none;
+    align-items: baseline;
+    border: none;
+    padding: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url("../../Assets/icons8-trash-can.svg") center center no-repeat;
+    cursor: pointer;
 }
