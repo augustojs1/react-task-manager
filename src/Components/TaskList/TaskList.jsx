@@ -13,7 +13,7 @@ const TaskList = ({ render, setTaskList, setRender }) => {
                     ))}
                 </ul>
             </section>
-            <TaskActions />
+            <TaskActions setTaskList={setTaskList} render={render} setRender={setRender}  />
         </>
     )
 }
