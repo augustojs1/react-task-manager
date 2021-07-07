@@ -17,6 +17,8 @@ const AddTask = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if(form.length === 0) return null;
         
         task = {
             title: form,
