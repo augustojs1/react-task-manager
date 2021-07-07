@@ -21,3 +21,23 @@
     border: solid 2px tomato;
     color: tomato;
 }
+
+@media only screen and (max-width: 890px) {
+    .taskActionsContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .taskActionsContainer button {
+        background-color: tomato;
+        border: solid 2px tomato;
+        color: white;
+        padding: 0.4rem 5rem;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 1rem;
+        border-radius: 3px;
+        margin: 0.5rem 0.6rem;
+    }
+}

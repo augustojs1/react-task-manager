@@ -13,3 +13,19 @@
     background-color: white;
     color: #33CCCC;
 }
+
+/* Media Queries */
+
+@media only screen and (max-width: 890px) {
+    .filterButton {
+        background-color: #33CCCC;
+        border: solid 2px #33CCCC;
+        color: white;
+        padding: 0.4rem 4rem;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 1rem;
+        border-radius: 3px;
+        margin: 0.3rem 0.6rem;
+    }
+}

@@ -28,3 +28,11 @@
     background: url("../../Assets/icons8-trash-can.svg") center center no-repeat;
     cursor: pointer;
 }
+
+/* Media Queries */
+
+@media only screen and (max-width: 890px) {
+    .taskItem {
+        margin: 0.6rem 0.5rem;
+    }
+}

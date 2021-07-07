@@ -12,3 +12,18 @@
     display: flex;
     justify-content: space-between;
 }
+
+/* Media Queries */
+
+@media only screen and (max-width: 890px) {
+    .filterButtonContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: -3rem;
+    }
+
+    .filterContainer {
+        padding: 2rem 0;
+    }
+}

@@ -38,4 +38,8 @@
 }
 
 
-
+@media only screen and (max-width: 890px) {
+    .formContainer {
+        margin: 0 0.5rem;
+    }
+}
