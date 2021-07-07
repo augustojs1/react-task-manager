@@ -3,7 +3,6 @@ import styles from "./AddTask.module.css";
 import FilterSection from '../TaskFilter/FilterSection';
 import TaskList from '../TaskList/TaskList';
 import useRender from '../../Hooks/useRender';
-// import TaskActions from '../TaskActions/TaskActions';
 
 const AddTask = () => {
     const [form, setForm] = React.useState('');
@@ -40,7 +39,6 @@ const AddTask = () => {
             </section>
             <FilterSection taskList={taskList} setTaskList={setTaskList} render={render} setRender={setRender} />
             <TaskList render={render} setTaskList={setTaskList} setRender={setRender} />
-            {/* <TaskActions taskList={taskList} setTaskList={setTaskList} render={render} setRender={setRender} /> */}
         </>
     )
 }
